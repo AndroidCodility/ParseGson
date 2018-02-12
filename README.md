@@ -1,4 +1,4 @@
-# ParseGson
+# Parse Gson
 Android application for Parsing Json Array Using Gson in Android Kotlin and make Http request using AsyncTask.
 
 # Gson
@@ -8,6 +8,17 @@ JSON-“JavaScript Object Notation” is very well structured, light weight and 
 [Android AsyncTask](https://developer.android.com/reference/android/os/AsyncTask.html)is an abstract class provided by Android which gives us the liberty to perform heavy tasks in the background and keep the UI thread light thus making the application more responsive.
 
 Android application runs on a single thread when launched. Due to this single thread model tasks that take longer time to fetch the response can make the application non-responsive. To avoid this we use android AsyncTask to perform the heavy tasks in background on a dedicated thread and passing the results back to the UI thread. Hence use of AsyncTask in android application keeps the UI thread responsive at all times.
+
+# Add Dependencies
+dependencies {
+
+    implementation 'com.google.code.gson:gson:2.8.0'
+}
+
+# Parsing Gson Code
+    // Parse Json ArrayList Using GSON library
+    val listType = object : TypeToken<ArrayList<Bean>>() {}.type
+    val beanArrayList: ArrayList<Bean> = GsonBuilder().create().fromJson(result, listType)
 
 GSON 1     |  GSON 2 |
 :---------:|:----------:
